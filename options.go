@@ -201,8 +201,7 @@ func SetToPortInt(i int) func(*Client) error {
 // SetDebug enables debugging messages
 func SetDebug(b bool) func(*Client) error {
 	return func(c *Client) error {
-		//c.debug = b
-		c.debug = true
+		c.debug = b
 		return nil
 	}
 }
