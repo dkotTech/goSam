@@ -98,7 +98,6 @@ func NewClient(addr string) (*Client, error) {
 
 func NewID() int32 {
 	id := rand.Int31n(math.MaxInt32)
-	fmt.Printf("Initializing new ID: %d\n", id)
 	return id
 }
 

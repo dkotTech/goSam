@@ -56,6 +56,4 @@ func (d *DatagramConn) SetWriteDeadline(t time.Time) error {
 	return d.conn.SetWriteDeadline(t)
 }
 
-var dgt net.PacketConn = &DatagramConn{}
-
-//func (c *Client) DatagramSend()
+var _ net.PacketConn = &DatagramConn{}

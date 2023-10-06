@@ -25,7 +25,6 @@ SOFTWARE.
 package goSam
 
 import (
-	"log"
 	"net"
 	"time"
 )
@@ -60,18 +59,15 @@ func (c *Conn) RemoteAddr() net.Addr {
 
 // SetDeadline sets the read and write deadlines associated with the connection
 func (c *Conn) SetDeadline(t time.Time) error {
-	log.Println("WARNING: SetDeadline() not sure this works")
 	return c.conn.SetDeadline(t)
 }
 
 // SetReadDeadline sets the read deadline associated with the connection
 func (c *Conn) SetReadDeadline(t time.Time) error {
-	log.Println("WARNING: SetReadDeadline() not sure this works")
 	return c.conn.SetReadDeadline(t)
 }
 
 // SetWriteDeadline sets the write deadline associated with the connection
 func (c *Conn) SetWriteDeadline(t time.Time) error {
-	log.Println("WARNING: SetWriteDeadline() not sure this works")
 	return c.conn.SetWriteDeadline(t)
 }

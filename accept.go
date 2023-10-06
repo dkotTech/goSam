@@ -1,7 +1,6 @@
 package goSam
 
 import (
-	"fmt"
 	"net"
 )
 
@@ -29,7 +28,6 @@ func (c *Client) ListenI2P(dest string) (net.Listener, error) {
 	if err != nil {
 		return nil, err
 	}
-	fmt.Println("Listening on destination:", c.Base32()+".b32.i2p")
 
 	c, err = c.NewClient(c.id)
 	if err != nil {
@@ -51,12 +49,10 @@ func (c *Client) Accept() (net.Conn, error) {
 	if c.id == 0 {
 		return c.AcceptI2P()
 	}
-	resp, err := c.StreamAccept()
+	_, err := c.StreamAccept()
 	if err != nil {
 		return nil, err
 	}
-
-	fmt.Println("Accept Resp:", resp)
 
 	return c.SamConn, nil
 }
